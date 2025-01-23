@@ -1,13 +1,14 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 const response = await fetch(Astro.url + 'api');
 const data = await response.json();
-console.log('data', data);;
+export const prerender = false
 
 ---
 
 <Layout>
 	<!-- <Welcome /> -->
-	<h1>Hello from {data.message}</h1>
+	<h1>this is  ssr rendred</h1>
+	 {data.products.map((data:any)=>(<h1>Hello from {data.title}</h1>))}
+
 </Layout>

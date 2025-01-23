@@ -3,6 +3,6 @@ import awsAmplify from "astro-aws-amplify";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "static",
   adapter: awsAmplify(),
 });
